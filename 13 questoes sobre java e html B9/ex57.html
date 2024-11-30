@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 57</title>
+</head>
+<body>
+    <h1>Cálculo do Consumo Médio de Combustível</h1>
+
+    <label for="distancia">Distância percorrida (em quilômetros):</label>
+    <input type="number" id="distancia" required>
+    <br><br>
+
+    <label for="combustivel">Total de combustível gasto (em litros):</label>
+    <input type="number" id="combustivel" required>
+    <br><br>
+
+    <button onclick="calcularConsumo()">Calcular Consumo Médio</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function calcularConsumo() {
+            var distancia = parseFloat(document.getElementById("distancia").value);
+            var combustivel = parseFloat(document.getElementById("combustivel").value);
+
+            if (isNaN(distancia) || isNaN(combustivel) || distancia <= 0 || combustivel <= 0) {
+                document.getElementById("resultado").textContent = "Por favor, insira valores válidos para a distância e o combustível.";
+                return;
+            }
+
+            var consumoMedio = distancia / combustivel;
+
+            document.getElementById("resultado").textContent = "O consumo médio do veículo é " + consumoMedio.toFixed(2) + " km/l.";
+        }
+    </script>
+</body>
+</html>

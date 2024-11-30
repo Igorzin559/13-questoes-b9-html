@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="txtDias" id="txtDias">
+    <input type="button" value="calcular" onclick="calcular()">
+    <p><strong>Resposta: </strong><span id="resposta"></span></p>
+
+    <script>
+        function calcular(){
+            let dias = Number(document.getElementById('txtDias').value)
+            let s = dias * 86400
+            document.getElementById('resposta').textContent = `${dias} dias tem ${s} segundos`
+            }
+    </script>
+</body>
+</html>
